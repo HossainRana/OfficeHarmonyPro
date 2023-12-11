@@ -1,4 +1,5 @@
 ## OfficeHarmonyPro
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT) <br/>
 Join: [Slack](https://join.slack.com/t/officeharmonypro/shared_invite/zt-28ly64rty-e1UTxL2c5XdoKqSRTD9VfQ)
 
 ## Initial Goals
