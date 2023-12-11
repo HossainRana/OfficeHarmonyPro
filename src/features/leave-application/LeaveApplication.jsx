@@ -1,6 +1,6 @@
-import React,{ useState } from 'react'
+import { useState } from 'react'
 import './LeaveApplication.css'
-import InputField from '../../components/form-field/InputField'
+import TextField from '@mui/material/TextField';
 import Paper from '@mui/material/Paper';
 import { SaveButton,CancelButton } from '../../components/form-field/FormButton.jsx';
 
@@ -78,7 +78,7 @@ const LeaveApplication = () => {
             <form className='apContainer' onSubmit={handleSubmit}>
                 {
                     inputs.map((input)=>(
-                        <InputField 
+                        <TextField 
                             key={input.id} 
                             {...input} 
                             value={formValues[input.name]}
