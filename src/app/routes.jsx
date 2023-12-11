@@ -2,6 +2,7 @@ import { lazy, Suspense } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Loading from "/src/components/ui/Loading.jsx";
 import Sidebar from "/src/components/layout/Sidebar";
+import Header from "/src/components/layout/Header";
 import LandingDashboard from "/src/features/dashboard/dashboard";
 
 const LeaveApplication = lazy(() =>
@@ -14,13 +15,10 @@ const LeaveEntryLayout = lazy(() =>
 const Routing = () => {
   return (
     <div>
-      {/* <Suspense fallback={<Loading/>}>
-      <Header></Header>
-      </Suspense> */}
       <BrowserRouter>
         <Suspense fallback={<Loading />}>
           <Sidebar>
-            {/* <Header></Header> */}
+            <Header></Header>
             <Routes>
               <Route path="/" element={<LeaveEntryLayout />}></Route>
               <Route path="/dashboard" element={<LandingDashboard />}></Route>
