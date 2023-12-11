@@ -1,8 +1,8 @@
 import { lazy, Suspense } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Loading from "/src/components/ui/Loading.jsx";
-import Sidebar from "/src/components/layout/Sidebar";
-import Header from "/src/components/layout/Header";
+import Sidebar from "/src/components/layout/Sidebar/Sidebar";
+import Header from "/src/components/layout/Header/Header";
 import LandingDashboard from "/src/features/dashboard/dashboard";
 
 const LeaveApplication = lazy(() =>
