@@ -8,8 +8,8 @@ import LandingDashboard from "/src/features/dashboard/dashboard";
 const LeaveApplication = lazy(() =>
   import("/src/features/leave-application/LeaveApplication")
 );
-const LeaveEntryLayout = lazy(() =>
-  import("/src/features/leave-entry/LeaveEntryLayout")
+const LeaveBalanceLayout = lazy(() =>
+  import("/src/features/leave-balance/LeaveBalanceLayout")
 );
 
 const Routing = () => {
@@ -20,10 +20,10 @@ const Routing = () => {
           <Sidebar>
             <Header></Header>
             <Routes>
-              <Route path="/" element={<LeaveEntryLayout />}></Route>
+              <Route path="/" element={<LeaveBalanceLayout />}></Route>
               <Route path="/dashboard" element={<LandingDashboard />}></Route>
               <Route path="/leaveapplication" element={<LeaveApplication />}></Route>
-              <Route path="/leaveentry" element={<LeaveEntryLayout />}></Route>
+              <Route path="/leavebalance" element={<LeaveBalanceLayout />}></Route>
             </Routes>
           </Sidebar>
         </Suspense>

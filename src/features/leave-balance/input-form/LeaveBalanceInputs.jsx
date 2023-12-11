@@ -3,11 +3,11 @@ import { Paper, TextField } from '@mui/material';
 import Autocomplete from '@mui/material/Autocomplete';
 import { useForm, Controller } from 'react-hook-form';  // Import Controller and useForm
 import { useDispatch, useSelector } from 'react-redux';
-import { addNewLeave, updateLeave } from '/src/features/leave-entry/leaveEntrySlice';
-import { LeaveEntryContext } from '/src/features/leave-entry/LeaveEntryContext';
+import { addNewLeave, updateLeave } from '/src/features/leave-balance/leaveBalanceSlice';
+import { LeaveBalanceContext } from '/src/features/leave-balance/LeaveBalanceContext';
 import { CancelButton, SaveButton } from '/src/components/form-field/FormButton.jsx';
 import { getAllEmployees } from '/src/features/employee-setup/employeeSlice'
-import './LeaveEntryInputs.css';
+import './LeaveBalanceInputs.css';
 
 const initialValue = {
   employee: null,
@@ -18,7 +18,7 @@ const initialValue = {
 };
 
 const LeaveEntryInputs = () => {
-  const { leaveData, setLeaveData } = useContext(LeaveEntryContext);
+  const { leaveData, setLeaveData } = useContext(LeaveBalanceContext);
   const employeeList = useSelector((state) => state.employeeStored);
   const dispatch = useDispatch();
   const { register, handleSubmit, setValue, formState: { errors }, reset, control }  = useForm({  // Destructure register from useForm
@@ -58,7 +58,7 @@ const LeaveEntryInputs = () => {
   return (
     <>
       <Paper style={{ padding: '1rem', width: '30%' }}>
-        <h2>Leave Type Entry</h2>
+        <h2>Leave Balance Entry</h2>
         <hr />
         <form onSubmit={handleSubmit(onSubmit)} className="inputContainer">
           <br />

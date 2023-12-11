@@ -1,4 +1,4 @@
-import { createSlice,createAsyncThunk,current } from '@reduxjs/toolkit'
+import { createSlice,createAsyncThunk } from '@reduxjs/toolkit'
 import {fetchLeaveEntries,addNewLeaveBalance,updateLeaveBalance} from '/src/apiClient/leaveAPI'
 // import axios from 'axios'
 
@@ -47,7 +47,7 @@ export const updateLeave = createAsyncThunk("leaveEntries/updateLeave", async (l
   }
 });
 
-export const leaveEntrySlice = createSlice({
+export const leaveBalanceSlice = createSlice({
   name: 'leaveEntriesSlc',
   initialState,
   reducers: {
@@ -93,5 +93,5 @@ export const leaveEntrySlice = createSlice({
 
 // export const { addLeave } = leaveEntrySlice.actions
 
-export default leaveEntrySlice.reducer
+export default leaveBalanceSlice.reducer
 

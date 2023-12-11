@@ -1,9 +1,9 @@
 import React,{useEffect} from 'react'
 import { Paper,Table,TableContainer,TableHead,TableRow,TableCell,TableBody } from '@mui/material'
 import { useSelector,useDispatch } from 'react-redux'
-import {getAllLeaveEntries} from '../leaveEntrySlice'
+import {getAllLeaveEntries} from '../leaveBalanceSlice'
 import {EditButton} from '/src/components/form-field/FormButton.jsx'
-import { LeaveEntryContext } from '../LeaveEntryContext'
+import { LeaveBalanceContext } from '../LeaveBalanceContext'
 import { useContext } from 'react'
 
 const LeaveEntryList = () => {
@@ -20,7 +20,7 @@ const LeaveEntryList = () => {
     }, [])
     // console.log(leaveDayEntries)
     //using context
-    const {leaveData, setLeaveData}= useContext(LeaveEntryContext)
+    const {leaveData, setLeaveData}= useContext(LeaveBalanceContext)
 
 
     // const [rowVal,setRowVal]=useState([{name:'kuddus', age:12},{name:'belal', age:15}])
@@ -28,7 +28,7 @@ const LeaveEntryList = () => {
     <>
         {/* <Button onClick={e=>dispatch(getAllLeaveEntries())}>Get Leave</Button> */}
         <Paper style={{margin:'1rem', padding:'1rem', width:'70%'}}>
-            <h2 style={{margin:0}}>Leave Types List</h2><br/><hr/>
+            <h2 style={{margin:0}}>Employees Leave Balance</h2><br/><hr/>
 
           {leaveDayEntries.status !="succeeded" && <h3 align="center">Loading....</h3>}
           {leaveDayEntries.status =="succeeded" &&             
@@ -67,3 +67,4 @@ const LeaveEntryList = () => {
 }
 
 export default LeaveEntryList
+

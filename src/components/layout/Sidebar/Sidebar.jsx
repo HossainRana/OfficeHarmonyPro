@@ -16,8 +16,8 @@ const Sidebar = ({children}) => {
             icon:<DashboardIcon/>
         },
         {
-            path:"/leaveentry",
-            name:"Leave Entry",
+            path:"/leavebalance",
+            name:"Leave Balance",
             icon:<ArticleIcon/>
         },
         {
