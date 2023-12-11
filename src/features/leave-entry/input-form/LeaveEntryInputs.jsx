@@ -1,11 +1,10 @@
-import React, { useContext, useEffect } from 'react';
+import { useContext, useEffect } from 'react';
 import { Paper, TextField } from '@mui/material';
 import Autocomplete from '@mui/material/Autocomplete';
 import { useForm, Controller } from 'react-hook-form';  // Import Controller and useForm
 import { useDispatch, useSelector } from 'react-redux';
-import { addNewLeave, updateLeave } from '../leaveEntrySlice';
+import { addNewLeave, updateLeave } from '/src/features/leave-entry/leaveEntrySlice';
 import { LeaveEntryContext } from '/src/features/leave-entry/LeaveEntryContext';
-import InputField from '/src/components/form-field/InputField.jsx';
 import { CancelButton, SaveButton } from '/src/components/form-field/FormButton.jsx';
 import { getAllEmployees } from '/src/features/employee-setup/employeeSlice'
 import './LeaveEntryInputs.css';
@@ -79,6 +78,7 @@ const LeaveEntryInputs = () => {
                 renderInput={(params) => (
                   <TextField
                     {...params}
+                    margin='dense'
                     label="Select Employee"
                     error={!!errors.employee}
                     helperText={errors.employee?.message}
@@ -88,24 +88,27 @@ const LeaveEntryInputs = () => {
             )}
           />
 
-          <InputField
+          <TextField
             name="leaveName"
             className="inputBox"
             label="Leave Name"
+            margin='dense'
             type="text"
             {...register('leaveName', { required: 'Leave Name is required' })}  // Use register here
           />
           {errors.leaveName && <span className="error">{errors.leaveName.message}</span>}
 
-          <InputField
+          <TextField
             name="balanceDays"
             className="inputBox"
             type="number"
             label="Balance Days"
+            margin='dense'
             {...register('balanceDays', { required: 'Balance Days is required' })}  // Use register here
           />
           {errors.balanceDays && <span className="error">{errors.balanceDays.message}</span>}
 
+          <br />
           <div className="btnRow" style={{ display: 'flex' }}>
             <SaveButton type="submit" style={{ marginRight: '1rem' }}>
               Save
