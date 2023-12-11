@@ -1,0 +1,13 @@
+.container{
+    display: flex;
+    flex-direction: row;        
+    padding-top: 3rem;
+}
+.inputContainer{
+    display: flex;
+    flex-direction: column;
+}
+
+.inputBox{
+    width: 100%;
+}
